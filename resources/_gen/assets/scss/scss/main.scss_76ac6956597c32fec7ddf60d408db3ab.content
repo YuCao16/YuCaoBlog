@@ -3233,7 +3233,7 @@ input[type="button"].btn-block {
     display: none; }
 
 .navbar-light .navbar-brand {
-  color: #333; }
+  color: #fff; }
   .navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus {
     color: #8486B2; }
 
@@ -7147,14 +7147,14 @@ a.text-dark:hover, a.text-dark:focus {
  *  Academic's Core
  **************************************************/
 html {
-  font-family: "Raleway", sans-serif;
-  font-size: 13.86px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16.17px;
   color: rgba(0, 0, 0, 0.8);
   line-height: 1.65; }
 
 @media screen and (min-width: 58em) {
   html {
-    font-size: 18px; } }
+    font-size: 21px; } }
 
 body {
   font-family: inherit;
@@ -7201,14 +7201,14 @@ ul.task-list li input[type="checkbox"] {
 
 /* Navigation bar text */
 .navbar-light {
-  font-family: "Raleway", sans-serif;
+  font-family: "Lora", sans-serif;
   font-weight: 400;
   line-height: 1.25;
   text-rendering: optimizeLegibility; }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display", sans-serif;
+  font-family: "Lora", sans-serif;
   font-weight: 400;
   margin-top: 1rem;
   margin-bottom: .5rem;
@@ -7284,7 +7284,7 @@ figcaption.numbered {
 
 pre,
 code {
-  font-family: "Roboto Mono", monospace;
+  font-family: "Cutive Mono", monospace;
   color: #c7254e;
   background-color: #f9f2f4; }
 
@@ -7652,7 +7652,7 @@ div.alert a {
   height: 70px;
   background: #ffffff;
   box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.11);
-  font-size: 13.86px;
+  font-size: 16.17px;
   position: fixed;
   top: 0;
   right: 0;
@@ -7681,7 +7681,7 @@ div.alert a {
         font-weight: bold !important;
         color: #8486B2 !important; }
   .navbar .dropdown-menu {
-    font-size: 13.86px; }
+    font-size: 16.17px; }
   .navbar .dropdown-item.active,
   .navbar .dropdown-item-active {
     font-weight: bold;

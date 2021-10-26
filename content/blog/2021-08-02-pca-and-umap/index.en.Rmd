@@ -17,7 +17,7 @@ image:
   preview_only: yes
 projects: []
 ---
- 
+
 In this blog, I mainly compared two dimensionality reduction methods, i.e. PCA (Principle Component Analysis) and UMAP (Uniform manifold approximation and projection). Let's explore which one is better, PCA, the traditional method of dimensionality reduction or, UMAP the new boy.
 
 Let's start with data mining. If you want to remember the codes, then you need to practice them everyday, right?
