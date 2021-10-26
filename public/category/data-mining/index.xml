@@ -251,7 +251,7 @@ result  %&amp;gt;%
 time_UMAP &amp;lt;- microbenchmark(svm_test(3,&amp;quot;UMAP&amp;quot;), times = 10, unit=&amp;quot;s&amp;quot;)
 time_PCA &amp;lt;- microbenchmark(svm_test(5,&amp;quot;PCA&amp;quot;), times = 10, unit=&amp;quot;s&amp;quot;)
 cat(&amp;quot;UMAP: &amp;quot;, mean(time_UMAP$time)/1e9, &amp;quot;, PCA: &amp;quot;, mean(time_PCA$time/1e9))&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## UMAP:  2.020654 , PCA:  0.285047&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## UMAP:  2.005904 , PCA:  0.330938&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Here is the result, PCA undoubtedly crushes UMAP. I know, I know, you mean that this is because the dataset is so small that the advantages of low dimensionality are not fully realezed, and this is just one example and doesn’t tell us much. I totally agree, I really am. &lt;strong&gt;What I would like to say is, the job of a data analyst should not be to blindly pursue new technologies, but to be flexible and efficient in getting tasks done.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Some of the code for the data mining section is taken from &lt;a href=&#34;https://www.youtube.com/watch?v=_1msVvPE_KY&#34;&gt;here&lt;/a&gt;, I’m very grateful to &lt;a href=&#34;https://www.youtube.com/watch?v=_1msVvPE_KY&#34;&gt;Julia Silge&lt;/a&gt; and &lt;a href=&#34;https://www.youtube.com/watch?v=_1msVvPE_KY&#34;&gt;David Robinson&lt;/a&gt; for their videos.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Leave a message if you like this blog.&lt;/strong&gt;&lt;/p&gt;

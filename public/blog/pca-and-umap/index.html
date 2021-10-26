@@ -38,7 +38,7 @@
   
   
   
-  <meta name="theme-color" content="#8486B2">
+  <meta name="theme-color" content="#1565c0">
   
 
   
@@ -190,7 +190,7 @@
   
   
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono%7CLora:400,700%7CRoboto:400,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
   
 
   
@@ -251,8 +251,8 @@
   
 
   <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_3.png">
-  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_192x192_fill_lanczos_center_3.png">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png">
 
   <link rel="canonical" href="https://yucao16.com/blog/pca-and-umap/">
 
@@ -411,7 +411,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/project"><span>Project</span></a>
+          <a class="nav-link " href="/resume"><span>Resume</span></a>
         </li>
 
         
@@ -433,7 +433,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link " href="/resume"><span>Resume</span></a>
+          <a class="nav-link " href="/project"><span>Project</span></a>
         </li>
 
         
@@ -806,7 +806,7 @@ result  %&gt;%
 time_UMAP &lt;- microbenchmark(svm_test(3,&quot;UMAP&quot;), times = 10, unit=&quot;s&quot;)
 time_PCA &lt;- microbenchmark(svm_test(5,&quot;PCA&quot;), times = 10, unit=&quot;s&quot;)
 cat(&quot;UMAP: &quot;, mean(time_UMAP$time)/1e9, &quot;, PCA: &quot;, mean(time_PCA$time/1e9))</code></pre>
-<pre><code>## UMAP:  2.020654 , PCA:  0.285047</code></pre>
+<pre><code>## UMAP:  2.005904 , PCA:  0.330938</code></pre>
 <p>Here is the result, PCA undoubtedly crushes UMAP. I know, I know, you mean that this is because the dataset is so small that the advantages of low dimensionality are not fully realezed, and this is just one example and doesn’t tell us much. I totally agree, I really am. <strong>What I would like to say is, the job of a data analyst should not be to blindly pursue new technologies, but to be flexible and efficient in getting tasks done.</strong></p>
 <p>Some of the code for the data mining section is taken from <a href="https://www.youtube.com/watch?v=_1msVvPE_KY">here</a>, I’m very grateful to <a href="https://www.youtube.com/watch?v=_1msVvPE_KY">Julia Silge</a> and <a href="https://www.youtube.com/watch?v=_1msVvPE_KY">David Robinson</a> for their videos.</p>
 <p><strong>Leave a message if you like this blog.</strong></p>
