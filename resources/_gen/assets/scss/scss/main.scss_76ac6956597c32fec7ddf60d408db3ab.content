@@ -8554,8 +8554,8 @@ a.hero-cta-alt:hover {
   position: relative; }
 
 .avatar {
-  width: 270px;
-  height: 270px;
+  width: 150px;
+  height: 150px;
   margin: 0 auto;
   object-fit: cover; }
 
