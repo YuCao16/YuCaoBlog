@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Deep Learning | Yu Cao</title>
+    <link>https://yucao16.com/tag/deep-learning/</link>
+      <atom:link href="https://yucao16.com/tag/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    <description>Deep Learning</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>© Yu Cao 2021</copyright><lastBuildDate>Fri, 27 Mar 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://yucao16.com/img/sharon-mccutcheon-62vi3TG5EDg-unsplash_small.jpg</url>
+      <title>Deep Learning</title>
+      <link>https://yucao16.com/tag/deep-learning/</link>
+    </image>
+    
+    <item>
+      <title>Credit Card Default detection.</title>
+      <link>https://yucao16.com/project/credit-card-default-detection/</link>
+      <pubDate>Fri, 27 Mar 2020 00:00:00 +0000</pubDate>
+      <guid>https://yucao16.com/project/credit-card-default-detection/</guid>
+      <description>&lt;h2 id=&#34;research-question-and-aim&#34;&gt;Research Question and Aim&lt;/h2&gt;
+&lt;p&gt;The prediction of whether a customer will default on a loan is a long-standing challenge. In this paper, we explore both dealing with missing values in the data and data imbalances, as well as comparing various machine learning methods.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;By adding weights to the algorithms we tested the limits of the two machine learning methods. By weighting the methods it is possible to achieve a 100% recall for both algorithms, albeit at the cost of accuracy. But for the prediction of loan defaults, such a trade-off is mostly worthwhile. And of the two algorithms, weighted logistic regression is the more impressive performer, yielded higher recall rate and AUC in both cases.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If interested in the details of the report, please click on the PDF block at the top of the page.&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Application of Generative Adversarial Networks on Unbalanced Datasets</title>
+      <link>https://yucao16.com/project/gan-application/</link>
+      <pubDate>Tue, 27 Apr 2010 00:00:00 +0000</pubDate>
+      <guid>https://yucao16.com/project/gan-application/</guid>
+      <description>&lt;h2 id=&#34;research-question-and-aim&#34;&gt;Research Question and Aim&lt;/h2&gt;
+&lt;p&gt;The plausibility of existing GAN-based (Generative Adversarial Network) oversampling models is questioned through a model remodelling and literature review approach, while the application of GANs to unbalanced datasets is explored, and information security issues when using GANs are considered.&lt;/p&gt;
+&lt;h2 id=&#34;abstract&#34;&gt;Abstract&lt;/h2&gt;
+&lt;p&gt;Class imbalance is a common problem in data that impedes the predictive performance of classification algorithms. In the task of loan default prediction, the impact of the imbalance on classifiers can often be economically costly. Oversampling methods are commonly used to deal with unbalanced datasets, and a large number of linear interpolation and KNN-based oversampling methods such as SMOTE, ADASYN and their variants are constantly proposed by scholars. However, they have an inherent disadvantage in dealing with high-dimensional and complex datasets. Deep learning networks can model complex data well, and models based on generative adversarial networks(GANs) have made relatively significant progress in generating tabular data  (e.g., database tables). Research at this stage has generally focused on the use of GAN for generating tabular data as novel oversampling tools, however this often requires complex structures and extensive hyper-parameter tuning. As an exploration of the application of GAN to unbalanced datasets, this paper proposes a framework that combines GANs with traditional oversampling methods. We compare our framework with five resampling methods and the results demonstrate that it can lead to better stability of the classifier in the presence of insufficient data.&lt;/p&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;We proposed a framework for handling imbalanced datasets based on CTGAN and SMOTE, CTGANS, and compared it with three oversampling methods, an undersampling method and a balanced dataset. We evaluated the P2P lending dataset with two classification algorithms, using three metrics of classification performance. We first evaluated the performance of the CTGAN model for generating tabular data and the validity of the CTGAN-based oversampling approach. The results showed that CTGAN successfully generated a complex dataset containing both numerical and categorical variables, with the distribution of most of the variables largely consistent with the original data, but mode collapse persisted in some variables. This resulted in the performance of the CTGAN-based oversampling method being significantly inferior compared to traditional oversampling methods.&lt;/p&gt;
+&lt;p&gt;While our method performs largely in line with traditional oversampling methods when the amount of data is sufficient, it has a significant performance advantage when the amount of data is insufficient, using only 10% of the samples to bring the performance of the classification algorithm close to that of other oversampling methods.&lt;/p&gt;
+&lt;p&gt;However, when comparing the performance of RLR and MLP, we found that the MLP trained on the datasets balanced by oversampling method performed significantly worse than the RLR model on the test set. Our conjecture is that the complexity of the model shifts the focus of learning from the features in the default data to the structure of the data, i.e. the MLP tends to recognise synthetic data in the dataset. Future research could test our conjecture by setting up two test sets, one with real data and one with synthetic data, and by observing the performance of the MLP on both sets.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If interested in the details of the report, please click on the PDF block at the top of the page.&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Chest X-Ray Pneumonia Classification Using ResNet.</title>
+      <link>https://yucao16.com/project/example/</link>
+      <pubDate>Tue, 27 Apr 2010 00:00:00 +0000</pubDate>
+      <guid>https://yucao16.com/project/example/</guid>
+      <description>&lt;h2 id=&#34;research-question-and-aim&#34;&gt;Research Question and Aim&lt;/h2&gt;
+&lt;p&gt;In this project, my task was to identify the type of pneumonia based on x-ray photographs, where the labels included normal, common pneumonia and Covid-19. And to make the accuracy rate as high as possible.&lt;/p&gt;
+&lt;h2 id=&#34;methodology&#34;&gt;Methodology&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Data normalization&lt;/strong&gt;: We normalized the image tensors by subtracting the mean and dividing by the standard deviation of pixels across each channel. Normalizing the data prevents the pixel values from any one channel from disproportionately affecting the losses and gradients.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Data augmentation&lt;/strong&gt;: We applied a random transform when loading the images from the training dataset. Specifically, we crop the photos so that they are transformed into square, 24×24 pixel size photos.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Residual connections&lt;/strong&gt;: We added the original input back to the output feature map obtained by passing the input through one or more convolutional layers. (We used the ResNet9 architecture.)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Batch normalization&lt;/strong&gt;: After each convolutional layer, we added a batch normalization layer, which normalizes the outputs of the previous layer. This is somewhat similar to data normalization, except it&amp;rsquo;s applied to the outputs of a layer, and the mean and standard deviation are learned parameters.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Learning rate scheduling&lt;/strong&gt;: Instead of using a fixed learning rate, we will use a learning rate scheduler, which will change the learning rate after every batch of training. There are many strategies for varying the learning rate during training, and we used the &amp;ldquo;One Cycle Learning Rate Policy&amp;rdquo;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Weight Decay&lt;/strong&gt;:We added weight decay to the optimizer, yet another regularization technique which prevents the weights from becoming too large by adding an additional term to the loss function.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Gradient clipping&lt;/strong&gt;: We also added gradient clippint, which helps limit the values of gradients to a small range to prevent undesirable changes in model parameters due to large gradient values during training.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Adam optimizer&lt;/strong&gt;: Instead of SGD (stochastic gradient descent), we used the Adam optimizer which uses techniques like momentum and adaptive learning rates for faster training. There are many other optimizers to choose froma and experiment with.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;results-and-discussion&#34;&gt;Results and Discussion&lt;/h2&gt;
+&lt;p&gt;After ten minutes of training, the accuracy finally stabilised at around 95%, while no over-fitting occurred. The effect of the dynamic learning rate and the structure of ResNet is remarkable.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If interested in the details of the report, please click on the Code block at the top of the page.&lt;/strong&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

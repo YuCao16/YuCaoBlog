@@ -16,7 +16,7 @@
 
 [[main]]
   name = "Resume"
-  url = "authors"
+  url = "resume"
   weight = 30
 
 [[main]]
