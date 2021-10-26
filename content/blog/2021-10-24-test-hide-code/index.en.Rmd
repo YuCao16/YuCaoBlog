@@ -52,7 +52,7 @@ library(tidymodels)
 library(readr)
 library(scales)
 library(janitor)
-library(tidytuesdayR)
+library(tidytuesdayR) 
 library(cytools)
 theme_set(theme_light())
 
