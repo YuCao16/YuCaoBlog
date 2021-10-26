@@ -12,12 +12,12 @@
 [[main]]
   name = "Project"
   url = "project"
-  weight = 20
+  weight = 30
 
 [[main]]
   name = "Resume"
   url = "resume"
-  weight = 30
+  weight = 20
 
 [[main]]
   name = "About"
