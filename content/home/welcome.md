@@ -5,11 +5,13 @@
 
 widget: blank  # See https://wowchemy.com/docs/page-builder/
 headless: true  # This file represents a page section.
-weight: 11  # Order that this section will appear.
+weight: 10  # Order that this section will appear.
 title: "Welcome :wave:"
 subtitle: ""
 design:
   columns: '1'
+  
+active: false
 ---
 
 Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots.

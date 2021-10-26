@@ -5,7 +5,7 @@
 
 widget: about.avatar  # See https://wowchemy.com/docs/page-builder/
 headless: true  # This file represents a page section.
-weight: 10  # Order that this section will appear.
+weight: 5  # Order that this section will appear.
 title: ""
 subtitle: ""
 design:
@@ -19,7 +19,7 @@ design:
     # color: navy
     # gradient_start: DarkGreen
     # gradient_end: ForestGreen
-    image: li-yang-5h_dMuX_7RE-unsplash.webp  # Name of image in #`static/media/`.
+    image: li-yang-5h_dMuX_7RE-unsplash.webp  # Name of image in `static/media/`.
     image_darken: 0.6
     image_size: cover
     image_position: center
@@ -30,6 +30,7 @@ advanced:
   css_class: 
   
 author: admin
+active: true
 ---
 
 I'm a research scientist in the Language team at DeepMind. I blog about machine learning, deep learning, and natural language processing.

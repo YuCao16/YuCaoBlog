@@ -16,5 +16,3 @@ menu_title = "#000"
 # Home sections
 home_section_odd = "#FFF"
 home_section_even = "rgb(234, 242, 250)"
-
-font = "rose"
