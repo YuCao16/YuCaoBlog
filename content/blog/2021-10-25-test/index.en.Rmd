@@ -16,13 +16,20 @@ image:
   preview_only: no
 projects: []
 ---
-
-[say hello!](/.netlify/functions/hello)
-
-<script src="https://utteranc.es/client.js"
-        repo="[ENTER REPO HERE]"
-        issue-term="pathname" 
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
+<button class="cb">dfa</button>
+<style scoped>
+.cb{
+    background-color: white;
+    color: #555555;
+    border-radius:12px;
+    outline: none;
+    transition-duration: 0.4s;
+}
+.cb:focus {
+  outline: none;
+}
+.cb:hover{
+background-color: #555555;
+color: white;
+}
+</style>
