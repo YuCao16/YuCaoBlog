@@ -62,6 +62,12 @@ color: white;
   labs(x = &quot;over-the-top inches&quot;, y = &quot;weight (lbs)&quot;) +
   scale_color_viridis_c()</code></pre>
 </div>
+<button class="cb" onclick="myFunction(JAcl5tRJVM)">
+Explanation
+</button>
+<div id="JAcl5tRJVM" style="display: none">
+
+</div>
 </figure>
 <figure style="padding: 0rem; margin: 0rem 0rem">
 <img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-4-1.png" width="672" />
@@ -77,6 +83,12 @@ color: white;
   ) +
   labs(x = &quot;over-the-top inches&quot;, y = &quot;weight (lbs)&quot;, color = NULL) +
   scale_color_viridis_d()</code></pre>
+</div>
+<button class="cb" onclick="myFunction(O5FeVvKch2)">
+Explanation
+</button>
+<div id="O5FeVvKch2" style="display: none">
+
 </div>
 </figure>
 <figure style="padding: 0rem; margin: 0rem 0rem">
@@ -123,4 +135,40 @@ Explanation
 
 </div>
 </figure>
-<p><strong>To be continued…</strong></p>
+<figure style="padding: 0rem; margin: 0rem 0rem">
+<img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-10-1.png" width="672" />
+<button class="cb" onclick="myFunction(YfY4lyskfJ)">Code</button>
+<div id="YfY4lyskfJ" style="display: none">
+<pre class="r"><code>library(janitor)
+library(tidyverse)
+library(hrbrthemes)
+library(viridis)
+library(ggridges)
+
+lincoln_weather %&gt;% 
+  clean_names() %&gt;% 
+  ggplot() + 
+  geom_density_ridges_gradient(aes(x = `mean_temperature_f`, y = `month`, fill = ..x..),
+                               scale = 3, rel_min_height = 0.01, alpha = 0.5) +
+  stat_summary(aes(x=mean_temperature_f, y = month, group=1),
+               geom = &quot;line&quot;, alpha=0.6, fun=mean) +
+  stat_summary(aes(x=mean_temperature_f, y = month, color=&quot;#24EA53&quot;),
+               geom = &quot;point&quot;, alpha=0.6, fun=mean) +
+  scale_fill_viridis(name = &quot;Temp. [F]&quot;, option = &quot;C&quot;) +
+  scale_colour_discrete(guide = FALSE) +
+  labs(title = &#39;Temperatures in Lincoln NE in 2016&#39;) +
+  theme_ipsum() +
+    theme(
+      panel.spacing = unit(0.1, &quot;lines&quot;),
+      strip.text.x = element_text(size = 8)
+    )</code></pre>
+</div>
+<button class="cb" onclick="myFunction(yZMi3HtkXi)">
+Explanation
+</button>
+<div id="yZMi3HtkXi" style="display: none">
+
+</div>
+</figure>
+<p><br><br>
+<strong>To be continued…</strong></p>

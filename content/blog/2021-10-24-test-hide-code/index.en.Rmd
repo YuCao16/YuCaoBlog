@@ -93,6 +93,10 @@ pumpkins %>%
   scale_color_viridis_c()
 ```
 </div>
+<button class="cb" onclick="myFunction(JAcl5tRJVM)">Explanation</button>
+<div id="JAcl5tRJVM" style="display: none">
+
+</div>
 </figure> 
 
 <figure style="padding: 0rem; margin: 0rem 0rem">
@@ -122,6 +126,10 @@ pumpkins %>%
   labs(x = "over-the-top inches", y = "weight (lbs)", color = NULL) +
   scale_color_viridis_d()
 ```
+</div>
+<button class="cb" onclick="myFunction(O5FeVvKch2)">Explanation</button>
+<div id="O5FeVvKch2" style="display: none">
+
 </div>
 </figure> 
 
@@ -193,6 +201,64 @@ water_raw %>%
 </div>
 </figure>
 
+<figure style="padding: 0rem; margin: 0rem 0rem">
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+library(janitor)
+library(tidyverse)
+library(hrbrthemes)
+library(viridis)
+library(ggridges)
 
+lincoln_weather %>% 
+  clean_names() %>% 
+  ggplot() + 
+  geom_density_ridges_gradient(aes(x = `mean_temperature_f`, y = `month`, fill = ..x..),
+                               scale = 3, rel_min_height = 0.01, alpha = 0.5) +
+  stat_summary(aes(x=mean_temperature_f, y = month, group=1),
+               geom = "line", alpha=0.6, fun=mean) +
+  stat_summary(aes(x=mean_temperature_f, y = month, color="#24EA53"),
+               geom = "point", alpha=0.6, fun=mean) +
+  scale_fill_viridis(name = "Temp. [F]", option = "C") +
+  scale_colour_discrete(guide = FALSE) +
+  labs(title = 'Temperatures in Lincoln NE in 2016') +
+  theme_ipsum() +
+    theme(
+      panel.spacing = unit(0.1, "lines"),
+      strip.text.x = element_text(size = 8)
+    )
+```
+<button class="cb" onclick="myFunction(YfY4lyskfJ)">Code</button>
+<div id="YfY4lyskfJ" style="display: none">
+```{r eval=FALSE}
+library(janitor)
+library(tidyverse)
+library(hrbrthemes)
+library(viridis)
+library(ggridges)
 
+lincoln_weather %>% 
+  clean_names() %>% 
+  ggplot() + 
+  geom_density_ridges_gradient(aes(x = `mean_temperature_f`, y = `month`, fill = ..x..),
+                               scale = 3, rel_min_height = 0.01, alpha = 0.5) +
+  stat_summary(aes(x=mean_temperature_f, y = month, group=1),
+               geom = "line", alpha=0.6, fun=mean) +
+  stat_summary(aes(x=mean_temperature_f, y = month, color="#24EA53"),
+               geom = "point", alpha=0.6, fun=mean) +
+  scale_fill_viridis(name = "Temp. [F]", option = "C") +
+  scale_colour_discrete(guide = FALSE) +
+  labs(title = 'Temperatures in Lincoln NE in 2016') +
+  theme_ipsum() +
+    theme(
+      panel.spacing = unit(0.1, "lines"),
+      strip.text.x = element_text(size = 8)
+    )
+``` 
+</div>
+<button class="cb" onclick="myFunction(yZMi3HtkXi)">Explanation</button>
+<div id="yZMi3HtkXi" style="display: none">
+
+</div>
+</figure>
+<br><br>
 **To be continued...**
