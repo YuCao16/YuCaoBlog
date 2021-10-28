@@ -170,5 +170,89 @@ Explanation
 
 </div>
 </figure>
+<figure style="padding: 0rem; margin: 0rem 0rem">
+<img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-12-1.png" width="672" />
+<button class="cb" onclick="myFunction(q0DeJ0KUeZ)">Code</button>
+<div id="q0DeJ0KUeZ" style="display: none">
+<pre class="r"><code>set.seed(2020)
+
+ll &lt;- rep(c(1:200),11)
+square &lt;- data.frame(x = c(1,200,200,1,1), y = c(1,1,200,200,1))
+df_density &lt;- data.frame(x=sample(ll, size = 500),y=sample(ll, size = 500)) 
+df_point &lt;- data.frame(x=sample(ll, size = 60),y=sample(ll, size = 60)) 
+ggplot(df_point,aes(x,y)) + 
+  geom_density_2d_filled(data=df_density, aes(x,y)) + 
+  stat_voronoi(geom=&quot;path&quot;, outline = square) + 
+  geom_point() + 
+  scale_fill_viridis_d()</code></pre>
+</div>
+<button class="cb" onclick="myFunction(xokHHdW4Wx)">
+Explanation
+</button>
+<div id="xokHHdW4Wx" style="display: none">
+
+</div>
+</figure>
+<figure style="padding: 0rem; margin: 0rem 0rem">
+<img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-14-1.png" width="672" />
+<button class="cb" onclick="myFunction(mw6YNvPA1g)">Code</button>
+<div id="mw6YNvPA1g" style="display: none">
+<pre class="r"><code>library(&quot;parsnip&quot;)
+library(&quot;titanic&quot;) ## Just for a different data set
+set.seed(123) ## For consistent jitter
+
+titanic_train$Survived = as.factor(titanic_train$Survived)
+
+## Build our tree using parsnip (but with rpart as the model engine)
+ti_tree &lt;-
+  decision_tree() %&gt;%
+  set_engine(&quot;rpart&quot;) %&gt;%
+  set_mode(&quot;classification&quot;) %&gt;%
+  fit(Survived ~ Pclass + Age, data = titanic_train)
+
+## Plot the data and model partitions
+titanic_train %&gt;%
+  na.omit() %&gt;% 
+  ggplot(aes(x=Pclass, y=Age)) +
+  geom_jitter(aes(col=Survived), alpha=0.7) +
+  geom_parttree(data = ti_tree, aes(fill=Survived), alpha = 0.1) +
+  theme_minimal()</code></pre>
+</div>
+<button class="cb" onclick="myFunction(RowLTYdggB)">
+Explanation
+</button>
+<div id="RowLTYdggB" style="display: none">
+
+</div>
+</figure>
+<figure style="padding: 0rem; margin: 0rem 0rem">
+<img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-16-1.png" width="672" />
+<button class="cb" onclick="myFunction(Ft4IuWWDIZ)">Code</button>
+<div id="Ft4IuWWDIZ" style="display: none">
+<pre class="r"><code>library(tidyverse)
+library(lubridate)
+library(scales)
+
+train_raw &lt;- read_csv(&quot;/train.csv&quot;)
+# dataset available here: https://www.kaggle.com/c/sliced-s01e10-playoffs-2/
+train_raw %&gt;%
+  mutate(outcome_type = outcome_type == &quot;adoption&quot;) %&gt;%
+  group_by(
+    week = week(datetime),
+    wday = wday(datetime)
+  ) %&gt;%
+  summarise(outcome_type = mean(outcome_type),.groups = &quot;drop&quot;) %&gt;%
+  ggplot(aes(week, factor(wday), fill = outcome_type)) +
+  geom_tile(alpha = 0.8) +
+  scale_fill_viridis_c(labels = scales::percent, direction=-1) +
+  labs(fill = &quot;% adopted&quot;, x = &quot;week of the year&quot;, y = &quot;week day&quot;)</code></pre>
+</div>
+<button class="cb" onclick="myFunction(RpK0ww72uE)">
+Explanation
+</button>
+<div id="RpK0ww72uE" style="display: none">
+
+</div>
+</figure>
 <p><br><br>
 <strong>To be continued…</strong></p>

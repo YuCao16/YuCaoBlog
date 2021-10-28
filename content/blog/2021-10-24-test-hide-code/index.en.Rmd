@@ -55,6 +55,15 @@ library(scales)
 library(janitor)
 library(tidytuesdayR) 
 library(cytools)
+library(GGally)
+library(ggvoronoi)
+library(ggExtra)
+library(parsnip)
+library(titanic)
+library(rpart)
+library(palmerpenguins)
+library(parttree)
+library(lubridate)
 theme_set(theme_light())
 
 pumpkins_raw <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-10-19/pumpkins.csv")
@@ -260,5 +269,136 @@ lincoln_weather %>%
 
 </div>
 </figure>
+
+<figure style="padding: 0rem; margin: 0rem 0rem">
+```{r echo=FALSE}
+set.seed(2020)
+
+ll <- rep(c(1:200),11)
+square <- data.frame(x = c(1,200,200,1,1), y = c(1,1,200,200,1))
+df_density <- data.frame(x=sample(ll, size = 500),y=sample(ll, size = 500)) 
+df_point <- data.frame(x=sample(ll, size = 60),y=sample(ll, size = 60)) 
+ggplot(df_point,aes(x,y)) + 
+  geom_density_2d_filled(data=df_density, aes(x,y)) + 
+  stat_voronoi(geom="path", outline = square) + 
+  geom_point() + 
+  scale_fill_viridis_d()
+```
+<button class="cb" onclick="myFunction(q0DeJ0KUeZ)">Code</button>
+<div id="q0DeJ0KUeZ" style="display: none">
+```{r eval=FALSE}
+set.seed(2020)
+
+ll <- rep(c(1:200),11)
+square <- data.frame(x = c(1,200,200,1,1), y = c(1,1,200,200,1))
+df_density <- data.frame(x=sample(ll, size = 500),y=sample(ll, size = 500)) 
+df_point <- data.frame(x=sample(ll, size = 60),y=sample(ll, size = 60)) 
+ggplot(df_point,aes(x,y)) + 
+  geom_density_2d_filled(data=df_density, aes(x,y)) + 
+  stat_voronoi(geom="path", outline = square) + 
+  geom_point() + 
+  scale_fill_viridis_d()
+``` 
+</div>
+<button class="cb" onclick="myFunction(xokHHdW4Wx)">Explanation</button>
+<div id="xokHHdW4Wx" style="display: none">
+
+</div>
+</figure>
+
+<figure style="padding: 0rem; margin: 0rem 0rem">
+```{r echo=FALSE}
+set.seed(123) ## For consistent jitter
+
+titanic_train$Survived = as.factor(titanic_train$Survived)
+
+ti_tree <-
+  decision_tree() %>%
+  set_engine("rpart") %>%
+  set_mode("classification") %>%
+  fit(Survived ~ Pclass + Age, data = titanic_train)
+
+titanic_train %>%
+  na.omit() %>% 
+  ggplot(aes(x=Pclass, y=Age)) +
+  geom_jitter(aes(col=Survived), alpha=0.7) +
+  geom_parttree(data = ti_tree, aes(fill=Survived), alpha = 0.1) +
+  theme_minimal()
+```
+<button class="cb" onclick="myFunction(mw6YNvPA1g)">Code</button>
+<div id="mw6YNvPA1g" style="display: none">
+```{r eval=FALSE}
+library("parsnip")
+library("titanic") ## Just for a different data set
+set.seed(123) ## For consistent jitter
+
+titanic_train$Survived = as.factor(titanic_train$Survived)
+
+## Build our tree using parsnip (but with rpart as the model engine)
+ti_tree <-
+  decision_tree() %>%
+  set_engine("rpart") %>%
+  set_mode("classification") %>%
+  fit(Survived ~ Pclass + Age, data = titanic_train)
+
+## Plot the data and model partitions
+titanic_train %>%
+  na.omit() %>% 
+  ggplot(aes(x=Pclass, y=Age)) +
+  geom_jitter(aes(col=Survived), alpha=0.7) +
+  geom_parttree(data = ti_tree, aes(fill=Survived), alpha = 0.1) +
+  theme_minimal()
+``` 
+</div>
+<button class="cb" onclick="myFunction(RowLTYdggB)">Explanation</button>
+<div id="RowLTYdggB" style="display: none">
+
+</div>
+</figure>
+
+<figure style="padding: 0rem; margin: 0rem 0rem">
+```{r echo=FALSE, warning=FALSE, message=FALSE}
+train_raw <- read_csv("https://raw.githubusercontent.com/YuCao16/datasets/main/Sliced_dataset/train.csv")
+
+train_raw %>%
+  mutate(outcome_type = outcome_type == "adoption") %>%
+  group_by(
+    week = week(datetime),
+    wday = wday(datetime)
+  ) %>%
+  summarise(outcome_type = mean(outcome_type),.groups = "drop") %>%
+  ggplot(aes(week, factor(wday), fill = outcome_type)) +
+  geom_tile(alpha = 0.8) +
+  scale_fill_viridis_c(labels = scales::percent, direction=-1) +
+  labs(fill = "% adopted", x = "week of the year", y = "week day")
+```
+<button class="cb" onclick="myFunction(Ft4IuWWDIZ)">Code</button>
+<div id="Ft4IuWWDIZ" style="display: none">
+```{r eval=FALSE}
+library(tidyverse)
+library(lubridate)
+library(scales)
+
+train_raw <- read_csv("/train.csv")
+# dataset available here: https://www.kaggle.com/c/sliced-s01e10-playoffs-2/
+train_raw %>%
+  mutate(outcome_type = outcome_type == "adoption") %>%
+  group_by(
+    week = week(datetime),
+    wday = wday(datetime)
+  ) %>%
+  summarise(outcome_type = mean(outcome_type),.groups = "drop") %>%
+  ggplot(aes(week, factor(wday), fill = outcome_type)) +
+  geom_tile(alpha = 0.8) +
+  scale_fill_viridis_c(labels = scales::percent, direction=-1) +
+  labs(fill = "% adopted", x = "week of the year", y = "week day")
+``` 
+</div>
+<button class="cb" onclick="myFunction(RpK0ww72uE)">Explanation</button>
+<div id="RpK0ww72uE" style="display: none">
+
+</div>
+</figure>
+
 <br><br>
 **To be continued...**
