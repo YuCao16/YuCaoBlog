@@ -6,6 +6,7 @@ bio: My research interests include Generative Adversarial Networks, Reinforcemen
 interests:
   - Deep Learning
   - Data mining & Feature engerring
+  - Reinforcement Learning
 
 social:
   - icon: envelope
