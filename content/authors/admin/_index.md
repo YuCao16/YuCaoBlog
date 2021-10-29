@@ -43,4 +43,4 @@ My name is Cao Yu and I have just completed my postgraduate degree in Computatio
 
 I am currently looking for a job as a data analyst within London, UK, and I am also applying for a PHD related to deep learning.
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "https://github.com/YuCao16/Private/blob/main/Yu_Cao_CV.pdf?raw=true" "newtab" >}}resumé{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "https://drive.google.com/file/d/1Wd4uc4GyP6iAFuzegHgWIniTVUy0f25X/view?usp=sharing" "newtab" >}}resumé{{< /staticref >}}.
