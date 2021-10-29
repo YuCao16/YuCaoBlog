@@ -66,7 +66,7 @@ color: white;
 Explanation
 </button>
 <div id="JAcl5tRJVM" style="display: none">
-
+<p>Already added to the schedule!</p>
 </div>
 </figure>
 <figure style="padding: 0rem; margin: 0rem 0rem">
@@ -88,7 +88,7 @@ Explanation
 Explanation
 </button>
 <div id="O5FeVvKch2" style="display: none">
-
+<p>Already added to the schedule!</p>
 </div>
 </figure>
 <figure style="padding: 0rem; margin: 0rem 0rem">
@@ -110,7 +110,7 @@ Explanation
 Explanation
 </button>
 <div id="explain3" style="display: none">
-<p>dafsafdafdafda</p>
+<p>Already added to the schedule!</p>
 </div>
 </figure>
 <figure style="padding: 0rem; margin: 0rem 0rem">
@@ -132,7 +132,7 @@ Explanation
 Explanation
 </button>
 <div id="kaDimFIfN7" style="display: none">
-
+<p>Already added to the schedule!</p>
 </div>
 </figure>
 <figure style="padding: 0rem; margin: 0rem 0rem">
@@ -167,7 +167,7 @@ lincoln_weather %&gt;%
 Explanation
 </button>
 <div id="yZMi3HtkXi" style="display: none">
-
+<p>Already added to the schedule!</p>
 </div>
 </figure>
 <figure style="padding: 0rem; margin: 0rem 0rem">
@@ -190,7 +190,7 @@ ggplot(df_point,aes(x,y)) +
 Explanation
 </button>
 <div id="xokHHdW4Wx" style="display: none">
-
+<p>Already added to the schedule!</p>
 </div>
 </figure>
 <figure style="padding: 0rem; margin: 0rem 0rem">
@@ -222,7 +222,7 @@ titanic_train %&gt;%
 Explanation
 </button>
 <div id="RowLTYdggB" style="display: none">
-
+<p>Already added to the schedule!</p>
 </div>
 </figure>
 <figure style="padding: 0rem; margin: 0rem 0rem">
@@ -251,7 +251,35 @@ train_raw %&gt;%
 Explanation
 </button>
 <div id="RpK0ww72uE" style="display: none">
+<p>Already added to the schedule!</p>
+</div>
+</figure>
+<figure style="padding: 0rem; margin: 0rem 0rem">
+<img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-18-1.png" width="672" />
+<button class="cb" onclick="myFunction(YamvnRRXOu)">Code</button>
+<div id="YamvnRRXOu" style="display: none">
+<pre class="r"><code>library(tidytuesdayR)
 
+tt &lt;- tt_load(&quot;2021-02-23&quot;)
+tt$employed %&gt;% 
+  mutate(dimension = case_when(
+    race_gender == &quot;TOTAL&quot; ~ &quot;Total&quot;,
+    race_gender %in% c(&quot;Men&quot;, &quot;Women&quot;) ~ &quot;Gender&quot;,
+    TRUE ~ &quot;Race&quot;
+  )) %&gt;% 
+  filter(dimension == &quot;Total&quot;) %&gt;% 
+  filter(!is.na(employ_n)) %&gt;% 
+  mutate(industry = fct_lump(industry, 6, w = employ_n)) %&gt;% 
+  ggplot(aes(x=year, y=employ_n, fill = industry)) + 
+  geom_bar(stat=&quot;identity&quot;) + 
+  scale_y_continuous(labels=comma) + 
+  scale_fill_viridis_d(direction = -1)</code></pre>
+</div>
+<button class="cb" onclick="myFunction(jj0mFrvkJx)">
+Explanation
+</button>
+<div id="jj0mFrvkJx" style="display: none">
+<p>Already added to the schedule!</p>
 </div>
 </figure>
 <p><br><br>

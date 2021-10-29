@@ -64,6 +64,10 @@ library(rpart)
 library(palmerpenguins)
 library(parttree)
 library(lubridate)
+library(tidytuesdayR)
+library(hrbrthemes)
+library(viridis)
+library(ggridges)
 theme_set(theme_light())
 
 pumpkins_raw <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-10-19/pumpkins.csv")
@@ -104,7 +108,7 @@ pumpkins %>%
 </div>
 <button class="cb" onclick="myFunction(JAcl5tRJVM)">Explanation</button>
 <div id="JAcl5tRJVM" style="display: none">
-
+Already added to the schedule!
 </div>
 </figure> 
 
@@ -138,7 +142,7 @@ pumpkins %>%
 </div>
 <button class="cb" onclick="myFunction(O5FeVvKch2)">Explanation</button>
 <div id="O5FeVvKch2" style="display: none">
-
+Already added to the schedule!
 </div>
 </figure> 
 
@@ -172,7 +176,7 @@ pumpkins %>%
 </div>
 <button class="cb" onclick="myFunction(explain3)">Explanation</button>
 <div id="explain3" style="display: none">
-dafsafdafdafda
+Already added to the schedule!
 </div>
 </figure> 
 
@@ -206,18 +210,12 @@ water_raw %>%
 </div>
 <button class="cb" onclick="myFunction(kaDimFIfN7)">Explanation</button>
 <div id="kaDimFIfN7" style="display: none">
-
+Already added to the schedule!
 </div>
 </figure>
 
 <figure style="padding: 0rem; margin: 0rem 0rem">
 ```{r echo=FALSE, warning=FALSE, message=FALSE}
-library(janitor)
-library(tidyverse)
-library(hrbrthemes)
-library(viridis)
-library(ggridges)
-
 lincoln_weather %>% 
   clean_names() %>% 
   ggplot() + 
@@ -266,7 +264,7 @@ lincoln_weather %>%
 </div>
 <button class="cb" onclick="myFunction(yZMi3HtkXi)">Explanation</button>
 <div id="yZMi3HtkXi" style="display: none">
-
+Already added to the schedule!
 </div>
 </figure>
 
@@ -302,7 +300,7 @@ ggplot(df_point,aes(x,y)) +
 </div>
 <button class="cb" onclick="myFunction(xokHHdW4Wx)">Explanation</button>
 <div id="xokHHdW4Wx" style="display: none">
-
+Already added to the schedule!
 </div>
 </figure>
 
@@ -352,7 +350,7 @@ titanic_train %>%
 </div>
 <button class="cb" onclick="myFunction(RowLTYdggB)">Explanation</button>
 <div id="RowLTYdggB" style="display: none">
-
+Already added to the schedule!
 </div>
 </figure>
 
@@ -396,7 +394,51 @@ train_raw %>%
 </div>
 <button class="cb" onclick="myFunction(RpK0ww72uE)">Explanation</button>
 <div id="RpK0ww72uE" style="display: none">
+Already added to the schedule!
+</div>
+</figure>
 
+<figure style="padding: 0rem; margin: 0rem 0rem">
+```{r echo=FALSE, warning=FALSE, message=FALSE, results='hide'}
+tt <- tt_load("2021-02-23")
+tt$employed %>% 
+  mutate(dimension = case_when(
+    race_gender == "TOTAL" ~ "Total",
+    race_gender %in% c("Men", "Women") ~ "Gender",
+    TRUE ~ "Race"
+  )) %>% 
+  filter(dimension == "Total") %>% 
+  filter(!is.na(employ_n)) %>% 
+  mutate(industry = fct_lump(industry, 6, w = employ_n)) %>% 
+  ggplot(aes(x=year, y=employ_n, fill = industry)) + 
+  geom_bar(stat="identity") + 
+  scale_y_continuous(labels=comma) + 
+  scale_fill_viridis_d(direction = -1)
+```
+<button class="cb" onclick="myFunction(YamvnRRXOu)">Code</button>
+<div id="YamvnRRXOu" style="display: none">
+```{r eval=FALSE}
+library(tidytuesdayR)
+
+tt <- tt_load("2021-02-23")
+tt$employed %>% 
+  mutate(dimension = case_when(
+    race_gender == "TOTAL" ~ "Total",
+    race_gender %in% c("Men", "Women") ~ "Gender",
+    TRUE ~ "Race"
+  )) %>% 
+  filter(dimension == "Total") %>% 
+  filter(!is.na(employ_n)) %>% 
+  mutate(industry = fct_lump(industry, 6, w = employ_n)) %>% 
+  ggplot(aes(x=year, y=employ_n, fill = industry)) + 
+  geom_bar(stat="identity") + 
+  scale_y_continuous(labels=comma) + 
+  scale_fill_viridis_d(direction = -1)
+``` 
+</div>
+<button class="cb" onclick="myFunction(jj0mFrvkJx)">Explanation</button>
+<div id="jj0mFrvkJx" style="display: none">
+Already added to the schedule!
 </div>
 </figure>
 
