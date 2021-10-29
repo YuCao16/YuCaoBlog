@@ -5,7 +5,7 @@
 
 widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
 headless = true  # This file represents a page section.
-active = false # Activate this widget? true/false
+active = true # Activate this widget? true/false
 weight = 60  # Order that this section will appear.
 
 title = ""
@@ -47,70 +47,33 @@ subtitle = ""
  css_class = ""
 +++
 
+#### Software Backend Internship Engineer, Beijing TRS IT Co., Jilin, China
+07/2019 — 12/2019
 
+* Participated in an environmental installation project for the Jilin government.
+* Helped extract, clean, visualise and analyse over 10 million rows of data and give reports.
+* Database management and maintenance
 
+#### Data Analytics Intern, Jilin Ruiyi Medical Supplies Co. LTD, Jilin, China
+12/2018 - 04/2019
 
+* Lead the project team to complete sales trend analysis, profit analysis of each product line and sales growth analysis of VIP customers by category.
+* Used Machine Learning model to make prediction.
+* The report discussed 156 suppliers, 80 sales customers, more than 100,000 sales data and had a sales value of 530 million in three years.
+* At the AGM in March 2019, that sales analysis provided a clear and effective data basis for the company's operating decisions and was unanimously praised.
 
-#### Data Scientist & Software Engineer, RStudio
-2020-present
+#### Sales Intern ,Tesla-Automobile Sales Servicshop 4S
+07/2018 - 09/2018
 
-#### Technical Advisory Committee Member, Bureau of Labor Statistics
-2019-present
+* Interacted with staff and received instruction from them.
+* Collected information from customers and potential customers.
+* Communicated with customers frequently to make sure their requirements were being met.
 
-* Advise the Commissioner of Labor Statistics on statistical methodology and other technical matters related to the collection and analysis of BLS data
-
-#### Data Scientist, Stack Overflow
-2016-2019
-
-* Analyze large datasets and build models to understand developers and the software industry, from tech ecosystems to how programmers search for jobs
-* Collaborate with data engineers, web developers, and product managers to implement models in production
-* Communicate the results of analyses, modeling, and tests through data visualization, interactive apps, and writing
-
-#### Data Scientist, Datassist
-2016
-
-* Developed statistical survey weighting tools (implemented in R) for nonprofits, local governments, social service agencies, and others.
-* Analyzed complex data sets from clients to create clear and compelling reports, visualizations, and interactive apps.
-* Wrote educational materials for online courses to develop the data literacy of our clients around the world.
-
-#### Content Developer & Support Representative, Sapling Learning
-2012—2016
-
-* Created interactive online questions, solutions, feedback, and tutorials designed for college-level astronomy courses.
-* Reviewed questions authored by others for accuracy, style, and appropriate level.
-* In total, created or reviewed over 800 detailed, rich questions.
-* Assisted in project management and user acceptance testing projects. 
-* Incorporated questions and other materials into customized, cohesive online course sites for instructors.
-* Provided individualized customer support for instructors and developed positive client relationships.
-
-#### Adjunct Professor, Quinnipiac University
-2006—2008
-
-* Taught physics, chemistry, astronomy, and earth science courses with accompanying lab courses for science and non-science majors, utilizing online course management system and online homework.
-* Increased student engagement and learning by employing cooperative instructional strategies.
-
-#### Adjunct Professor, University of New Haven
-2006—2008
-
-* Taught physics for non-science majors with accompanying lab course, utilizing online course management system and online homework.
-* Increased student engagement and learning by employing cooperative instructional strategies.
-
-#### Postdoctoral Researcher, Yale University
-2005—2006
-
-* Developed software for data analysis pipeline of Palomar-QUEST Survey
-* Worked with large data sets (survey generated ~70 GB per night) and integrated existing software of collaborators into pipeline.
-
-#### Graduate Instructor/Research Assistant, University of Texas at Austin
-2000—2005
-
-* Studied internal kinematics of nearby galaxies using infrared radiation to determine effects of dust.
-* Independently observed at McDonald Observatory (over 40 nights) and developed data analysis software tailored to research project. 
-* Published first-author papers in refereed journals and presented research at national scientific meetings. 
-* Independently coordinated and taught introductory astronomy observing lab for non-science majors, supervising other graduate student instructors and developing curriculum.
 
 ## Education
 
-* University of Texas at Austin - PhD in astronomy, 2005
-* University of Texas at Austin - MA in astronomy, 2002
-* Texas A&M University - BS in physics, 2000 (magna cum laude)
+* University College London - MS in Computational Finance, GPA 4.0/4.0 2020 - 2021
+* University - BS in Applied Mathematics, 2016 GPA 4.0/4.0 2018 - 2020
+* Xian Jiao Tong Liverpool University, 2016 GPA 3.6/4.0 2016 - 2018
+
+To download my resume, please click on [Download](https://drive.google.com/file/d/1Wd4uc4GyP6iAFuzegHgWIniTVUy0f25X/view?usp=sharing).
