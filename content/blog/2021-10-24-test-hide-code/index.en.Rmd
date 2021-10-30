@@ -68,6 +68,8 @@ library(tidytuesdayR)
 library(hrbrthemes)
 library(viridis)
 library(ggridges)
+library(ggExtra)
+
 theme_set(theme_light())
 
 pumpkins_raw <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-10-19/pumpkins.csv")
@@ -400,8 +402,76 @@ Already added to the schedule!
 
 <figure style="padding: 0rem; margin: 0rem 0rem">
 ```{r echo=FALSE, warning=FALSE, message=FALSE, results='hide'}
-tt <- tt_load("2021-02-23")
-tt$employed %>% 
+gdpr_raw <- readr::read_tsv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-04-21/gdpr_violations.tsv")
+
+gdpr_tidy <- gdpr_raw %>%
+  transmute(id,
+    price,
+    country = name,
+    article_violated,
+    articles = str_extract_all(article_violated, 
+                               "Art.[:digit:]+|Art. [:digit:]+")) %>%
+  mutate(total_articles = map_int(articles, length)) %>% 
+  unnest(articles) %>%
+  add_count(articles) %>%
+  filter(n > 10) %>%
+  select(-n)
+
+gdpr_tidy %>%
+  mutate(articles = str_replace_all(articles, "Art. ", "Article "),
+         articles = fct_reorder(articles, price, mean)) %>%
+  ggplot(aes(articles, price + 1, color = articles, fill = articles)) +
+  geom_boxplot(alpha = 0.2, outlier.colour = NA) +
+  ggbeeswarm::geom_quasirandom() +
+  scale_y_log10(labels = scales::dollar_format(prefix = "€")) +
+  labs(x = NULL, y = "GDPR fine (EUR)") +
+  scale_fill_viridis_d() +
+  scale_color_viridis_d() +
+  theme(legend.position = "none")
+```
+<button class="cb" onclick="myFunction(S7R4Qn5zhO)">Code</button>
+<div id="S7R4Qn5zhO" style="display: none">
+```{r eval=FALSE}
+library(ggbeeswarm)
+gdpr_raw <- readr::read_tsv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-04-21/gdpr_violations.tsv")
+
+gdpr_tidy <- gdpr_raw %>%
+  transmute(id,
+    price,
+    country = name,
+    article_violated,
+    articles = str_extract_all(article_violated, 
+                               "Art.[:digit:]+|Art. [:digit:]+")) %>%
+  mutate(total_articles = map_int(articles, length)) %>% 
+  unnest(articles) %>%
+  add_count(articles) %>%
+  filter(n > 10) %>%
+  select(-n)
+
+gdpr_tidy %>%
+  mutate(articles = str_replace_all(articles, "Art. ", "Article "),
+         articles = fct_reorder(articles, price, mean)) %>%
+  ggplot(aes(articles, price + 1, color = articles, fill = articles)) +
+  geom_boxplot(alpha = 0.2, outlier.colour = NA) +
+  geom_quasirandom() +
+  scale_y_log10(labels = scales::dollar_format(prefix = "€")) +
+  labs(x = NULL, y = "GDPR fine (EUR)") +
+  scale_fill_viridis_d() +
+  scale_color_viridis_d() +
+  theme(legend.position = "none")
+``` 
+</div>
+<button class="cb" onclick="myFunction(nE7ms1VJpg)">Explanation</button>
+<div id="nE7ms1VJpg" style="display: none">
+
+</div>
+</figure>
+
+<figure style="padding: 0rem; margin: 0rem 0rem">
+```{r echo=FALSE, warning=FALSE, message=FALSE, results='hide'}
+employed <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-02-23/employed.csv")
+
+employed %>% 
   mutate(dimension = case_when(
     race_gender == "TOTAL" ~ "Total",
     race_gender %in% c("Men", "Women") ~ "Gender",
@@ -439,6 +509,61 @@ tt$employed %>%
 <button class="cb" onclick="myFunction(jj0mFrvkJx)">Explanation</button>
 <div id="jj0mFrvkJx" style="display: none">
 Already added to the schedule!
+</div>
+</figure>
+
+<figure style="padding: 0rem; margin: 0rem 0rem">
+```{r echo=FALSE}
+cars$group <- c(rep("A", 25), rep("B",25)) %>% sample()
+
+p <- ggplot(cars, aes(x = speed, y = dist, color = group)) +
+  geom_point()+ 
+  theme(legend.position = c(0.1,0.8))
+
+# Densigram
+ggMarginal(p, type = "densigram",
+           groupFill = TRUE,
+           groupColour = TRUE,
+           alpha = 0.5) 
+```
+<button class="cb" onclick="myFunction(nlVChJHqez)">Code</button>
+<div id="nlVChJHqez" style="display: none">
+```{r eval=FALSE}
+library(ggExtra)
+cars$group <- c(rep("A", 25), rep("B",25)) %>% sample()
+
+p <- ggplot(cars, aes(x = speed, y = dist, color = group)) +
+  geom_point()+ 
+  theme(legend.position = c(0.1,0.8)) 
+
+# Densigram
+ggMarginal(p, type = "densigram",
+           groupFill = TRUE,
+           groupColour = TRUE,
+           alpha = 0.5) 
+``` 
+</div>
+<button class="cb" onclick="myFunction(klDVZ0fncK)">Explanation</button>
+<div id="klDVZ0fncK" style="display: none">
+
+</div>
+</figure>
+
+<figure style="padding: 0rem; margin: 0rem 0rem">
+```{r echo=FALSE}
+ggpairs(iris, columns = 1:4, aes(color = Species, alpha = 0.5))
+```
+<button class="cb" onclick="myFunction(IjMgiadHGP)">Code</button>
+<div id="IjMgiadHGP" style="display: none">
+```{r eval=FALSE}
+library(GGally)
+
+ggpairs(iris, columns = 1:4, aes(color = Species, alpha = 0.5))
+``` 
+</div>
+<button class="cb" onclick="myFunction(zMr6ejl3OQ)">Explanation</button>
+<div id="zMr6ejl3OQ" style="display: none">
+
 </div>
 </figure>
 

@@ -256,6 +256,45 @@ Explanation
 </figure>
 <figure style="padding: 0rem; margin: 0rem 0rem">
 <img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-18-1.png" width="672" />
+<button class="cb" onclick="myFunction(S7R4Qn5zhO)">Code</button>
+<div id="S7R4Qn5zhO" style="display: none">
+<pre class="r"><code>library(ggbeeswarm)
+gdpr_raw &lt;- readr::read_tsv(&quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-04-21/gdpr_violations.tsv&quot;)
+
+gdpr_tidy &lt;- gdpr_raw %&gt;%
+  transmute(id,
+    price,
+    country = name,
+    article_violated,
+    articles = str_extract_all(article_violated, 
+                               &quot;Art.[:digit:]+|Art. [:digit:]+&quot;)) %&gt;%
+  mutate(total_articles = map_int(articles, length)) %&gt;% 
+  unnest(articles) %&gt;%
+  add_count(articles) %&gt;%
+  filter(n &gt; 10) %&gt;%
+  select(-n)
+
+gdpr_tidy %&gt;%
+  mutate(articles = str_replace_all(articles, &quot;Art. &quot;, &quot;Article &quot;),
+         articles = fct_reorder(articles, price, mean)) %&gt;%
+  ggplot(aes(articles, price + 1, color = articles, fill = articles)) +
+  geom_boxplot(alpha = 0.2, outlier.colour = NA) +
+  geom_quasirandom() +
+  scale_y_log10(labels = scales::dollar_format(prefix = &quot;€&quot;)) +
+  labs(x = NULL, y = &quot;GDPR fine (EUR)&quot;) +
+  scale_fill_viridis_d() +
+  scale_color_viridis_d() +
+  theme(legend.position = &quot;none&quot;)</code></pre>
+</div>
+<button class="cb" onclick="myFunction(nE7ms1VJpg)">
+Explanation
+</button>
+<div id="nE7ms1VJpg" style="display: none">
+
+</div>
+</figure>
+<figure style="padding: 0rem; margin: 0rem 0rem">
+<img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-20-1.png" width="672" />
 <button class="cb" onclick="myFunction(YamvnRRXOu)">Code</button>
 <div id="YamvnRRXOu" style="display: none">
 <pre class="r"><code>library(tidytuesdayR)
@@ -280,6 +319,45 @@ Explanation
 </button>
 <div id="jj0mFrvkJx" style="display: none">
 <p>Already added to the schedule!</p>
+</div>
+</figure>
+<figure style="padding: 0rem; margin: 0rem 0rem">
+<img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-22-1.png" width="672" />
+<button class="cb" onclick="myFunction(nlVChJHqez)">Code</button>
+<div id="nlVChJHqez" style="display: none">
+<pre class="r"><code>library(ggExtra)
+cars$group &lt;- c(rep(&quot;A&quot;, 25), rep(&quot;B&quot;,25)) %&gt;% sample()
+
+p &lt;- ggplot(cars, aes(x = speed, y = dist, color = group)) +
+  geom_point()+ 
+  theme(legend.position = c(0.1,0.8)) 
+
+# Densigram
+ggMarginal(p, type = &quot;densigram&quot;,
+           groupFill = TRUE,
+           groupColour = TRUE,
+           alpha = 0.5) </code></pre>
+</div>
+<button class="cb" onclick="myFunction(klDVZ0fncK)">
+Explanation
+</button>
+<div id="klDVZ0fncK" style="display: none">
+
+</div>
+</figure>
+<figure style="padding: 0rem; margin: 0rem 0rem">
+<img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-24-1.png" width="672" />
+<button class="cb" onclick="myFunction(IjMgiadHGP)">Code</button>
+<div id="IjMgiadHGP" style="display: none">
+<pre class="r"><code>library(GGally)
+
+ggpairs(iris, columns = 1:4, aes(color = Species, alpha = 0.5))</code></pre>
+</div>
+<button class="cb" onclick="myFunction(zMr6ejl3OQ)">
+Explanation
+</button>
+<div id="zMr6ejl3OQ" style="display: none">
+
 </div>
 </figure>
 <p><br><br>
