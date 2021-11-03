@@ -689,5 +689,7 @@ bird_parsed %>%
 </div>
 </figure>
 
+{{ template "_internal/disqus.html" . }}
+
 <br><br>
 **To be continued...**
