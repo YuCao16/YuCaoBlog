@@ -95,14 +95,15 @@ Explanation
 <img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-6-1.png" width="672" />
 <button class="cb" onclick="myFunction(myDIV3)">Code</button>
 <div id="myDIV3" style="display: none">
-<pre class="r"><code>pumpkins %&gt;%
+<pre class="r"><code>library(ggbeeswarm)
+pumpkins %&gt;%
   mutate(
     country = fct_lump(country, n = 10),
     country = fct_reorder(country, weight_lbs)
   ) %&gt;%
   ggplot(aes(country, weight_lbs, color = country)) +
   geom_boxplot(outlier.colour = NA) +
-  geom_jitter(alpha = 0.1, width = 0.15) +
+  geom_quasirandom(alpha=0.1, width=0.2) +
   labs(x = NULL, y = &quot;weight (lbs)&quot;) +
   theme(legend.position = &quot;none&quot;)</code></pre>
 </div>
@@ -342,7 +343,7 @@ ggMarginal(p, type = &quot;densigram&quot;,
 Explanation
 </button>
 <div id="klDVZ0fncK" style="display: none">
-
+<p>Already added to the schedule!</p>
 </div>
 </figure>
 <figure style="padding: 0rem; margin: 0rem 0rem">
@@ -357,6 +358,76 @@ ggpairs(iris, columns = 1:4, aes(color = Species, alpha = 0.5))</code></pre>
 Explanation
 </button>
 <div id="zMr6ejl3OQ" style="display: none">
+<p>Already added to the schedule!</p>
+</div>
+</figure>
+<figure style="padding: 0rem; margin: 0rem 0rem">
+<img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-26-1.png" width="672" />
+<button class="cb" onclick="myFunction(atK5FQwQxp)">Code</button>
+<div id="atK5FQwQxp" style="display: none">
+<pre class="r"><code>departures_raw &lt;- read_csv(&quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-04-27/departures.csv&quot;)
+
+departures_raw %&gt;%
+  filter(departure_code &lt; 9) %&gt;%
+  mutate(involuntary = if_else(departure_code %in% 3:4, &quot;involuntary&quot;, &quot;other&quot;)) %&gt;%
+  filter(fyear &gt; 1995, fyear &lt; 2019) %&gt;%
+  count(fyear, involuntary) %&gt;%
+  ggplot(aes(fyear, n, color = involuntary)) +
+  geom_line(size = 1.2, alpha = 0.5) +
+  geom_point(size = 2) +
+  geom_smooth(method = &quot;lm&quot;, lty = 2) +
+  scale_y_continuous(limits = c(0, NA)) +
+  labs(x = NULL, y = &quot;Number of CEO departures&quot;, color = NULL) +
+  theme(legend.position = &quot;bottom&quot;,
+        legend.justification = &quot;left&quot;) </code></pre>
+</div>
+<button class="cb" onclick="myFunction(uwVqUoN3uR)">
+Explanation
+</button>
+<div id="uwVqUoN3uR" style="display: none">
+<p>Already added to the schedule!</p>
+</div>
+</figure>
+<figure style="padding: 0rem; margin: 0rem 0rem">
+<img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-28-1.png" width="672" />
+<button class="cb" onclick="myFunction(umxUunxEcM)">Code</button>
+<div id="umxUunxEcM" style="display: none">
+<pre class="r"><code>bird_baths &lt;- readr::read_csv(&quot;https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-08-31/bird_baths.csv&quot;) 
+
+top_birds &lt;-
+  bird_baths %&gt;%
+  filter(is.na(urban_rural)) %&gt;%
+  arrange(-bird_count) %&gt;%
+  slice_max(bird_count, n = 15) %&gt;%
+  pull(bird_type)
+
+bird_parsed &lt;-
+  bird_baths %&gt;%
+  filter(
+    !is.na(urban_rural),
+    bird_type %in% top_birds
+  ) %&gt;%
+  group_by(urban_rural, bird_type) %&gt;%
+  summarise(bird_count = mean(bird_count), .groups = &quot;drop&quot;)
+
+
+bird_parsed %&gt;%
+  ggplot(aes(bird_count, bird_type)) +
+  geom_segment(
+    data = bird_parsed %&gt;%
+      pivot_wider(
+        names_from = urban_rural,
+        values_from = bird_count),
+    aes(x = Rural, xend = Urban, y = bird_type, yend = bird_type),
+    alpha = 0.7, color = &quot;gray70&quot;, size = 1.5) +
+  geom_point(aes(color = urban_rural), size = 3) +
+  scale_x_continuous(labels = scales::percent) +
+  labs(x = &quot;Probability of seeing bird&quot;, y = NULL, color = NULL)</code></pre>
+</div>
+<button class="cb" onclick="myFunction(3JUMz2jSUp)">
+Explanation
+</button>
+<div id="3JUMz2jSUp" style="display: none">
 
 </div>
 </figure>

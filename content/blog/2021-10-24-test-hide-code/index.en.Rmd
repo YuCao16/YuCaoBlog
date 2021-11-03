@@ -157,13 +157,14 @@ pumpkins %>%
   ) %>%
   ggplot(aes(country, weight_lbs, color = country)) +
   geom_boxplot(outlier.colour = NA) +
-  geom_jitter(alpha = 0.1, width = 0.15) +
+  ggbeeswarm::geom_quasirandom(alpha=0.1, width=0.2) +
   labs(x = NULL, y = "weight (lbs)") +
   theme(legend.position = "none")
 ```
 <button class="cb" onclick="myFunction(myDIV3)">Code</button>
 <div id="myDIV3" style="display: none">
 ```{r eval=FALSE}
+library(ggbeeswarm)
 pumpkins %>%
   mutate(
     country = fct_lump(country, n = 10),
@@ -171,7 +172,7 @@ pumpkins %>%
   ) %>%
   ggplot(aes(country, weight_lbs, color = country)) +
   geom_boxplot(outlier.colour = NA) +
-  geom_jitter(alpha = 0.1, width = 0.15) +
+  geom_quasirandom(alpha=0.1, width=0.2) +
   labs(x = NULL, y = "weight (lbs)") +
   theme(legend.position = "none")
 ```
@@ -545,7 +546,7 @@ ggMarginal(p, type = "densigram",
 </div>
 <button class="cb" onclick="myFunction(klDVZ0fncK)">Explanation</button>
 <div id="klDVZ0fncK" style="display: none">
-
+Already added to the schedule!
 </div>
 </figure>
 
@@ -563,6 +564,127 @@ ggpairs(iris, columns = 1:4, aes(color = Species, alpha = 0.5))
 </div>
 <button class="cb" onclick="myFunction(zMr6ejl3OQ)">Explanation</button>
 <div id="zMr6ejl3OQ" style="display: none">
+Already added to the schedule!
+</div>
+</figure>
+
+<figure style="padding: 0rem; margin: 0rem 0rem">
+```{r echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+departures_raw <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-04-27/departures.csv")
+
+departures_raw %>%
+  filter(departure_code < 9) %>%
+  mutate(involuntary = if_else(departure_code %in% 3:4, "involuntary", "other")) %>%
+  filter(fyear > 1995, fyear < 2019) %>%
+  count(fyear, involuntary) %>%
+  ggplot(aes(fyear, n, color = involuntary)) +
+  geom_line(size = 1.2, alpha = 0.5) +
+  geom_point(size = 2) +
+  geom_smooth(method = "lm", lty = 2) +
+  scale_y_continuous(limits = c(0, NA)) +
+  labs(x = NULL, y = "Number of CEO departures", color = NULL) +
+  theme(legend.position = "bottom",
+        legend.justification = "left")
+```
+<button class="cb" onclick="myFunction(atK5FQwQxp)">Code</button>
+<div id="atK5FQwQxp" style="display: none">
+```{r eval=FALSE}
+departures_raw <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-04-27/departures.csv")
+
+departures_raw %>%
+  filter(departure_code < 9) %>%
+  mutate(involuntary = if_else(departure_code %in% 3:4, "involuntary", "other")) %>%
+  filter(fyear > 1995, fyear < 2019) %>%
+  count(fyear, involuntary) %>%
+  ggplot(aes(fyear, n, color = involuntary)) +
+  geom_line(size = 1.2, alpha = 0.5) +
+  geom_point(size = 2) +
+  geom_smooth(method = "lm", lty = 2) +
+  scale_y_continuous(limits = c(0, NA)) +
+  labs(x = NULL, y = "Number of CEO departures", color = NULL) +
+  theme(legend.position = "bottom",
+        legend.justification = "left") 
+``` 
+</div>
+<button class="cb" onclick="myFunction(uwVqUoN3uR)">Explanation</button>
+<div id="uwVqUoN3uR" style="display: none">
+Already added to the schedule!
+</div>
+</figure>
+
+
+<figure style="padding: 0rem; margin: 0rem 0rem">
+```{r echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+bird_baths <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-08-31/bird_baths.csv") 
+
+top_birds <-
+  bird_baths %>%
+  filter(is.na(urban_rural)) %>%
+  arrange(-bird_count) %>%
+  slice_max(bird_count, n = 15) %>%
+  pull(bird_type)
+
+bird_parsed <-
+  bird_baths %>%
+  filter(
+    !is.na(urban_rural),
+    bird_type %in% top_birds
+  ) %>%
+  group_by(urban_rural, bird_type) %>%
+  summarise(bird_count = mean(bird_count), .groups = "drop")
+
+
+bird_parsed %>%
+  ggplot(aes(bird_count, bird_type)) +
+  geom_segment(
+    data = bird_parsed %>%
+      pivot_wider(
+        names_from = urban_rural,
+        values_from = bird_count),
+    aes(x = Rural, xend = Urban, y = bird_type, yend = bird_type),
+    alpha = 0.7, color = "gray70", size = 1.5) +
+  geom_point(aes(color = urban_rural), size = 3) +
+  scale_x_continuous(labels = scales::percent) +
+  labs(x = "Probability of seeing bird", y = NULL, color = NULL)
+```
+<button class="cb" onclick="myFunction(umxUunxEcM)">Code</button>
+<div id="umxUunxEcM" style="display: none">
+```{r eval=FALSE}
+bird_baths <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2021/2021-08-31/bird_baths.csv") 
+
+top_birds <-
+  bird_baths %>%
+  filter(is.na(urban_rural)) %>%
+  arrange(-bird_count) %>%
+  slice_max(bird_count, n = 15) %>%
+  pull(bird_type)
+
+bird_parsed <-
+  bird_baths %>%
+  filter(
+    !is.na(urban_rural),
+    bird_type %in% top_birds
+  ) %>%
+  group_by(urban_rural, bird_type) %>%
+  summarise(bird_count = mean(bird_count), .groups = "drop")
+
+
+bird_parsed %>%
+  ggplot(aes(bird_count, bird_type)) +
+  geom_segment(
+    data = bird_parsed %>%
+      pivot_wider(
+        names_from = urban_rural,
+        values_from = bird_count),
+    aes(x = Rural, xend = Urban, y = bird_type, yend = bird_type),
+    alpha = 0.7, color = "gray70", size = 1.5) +
+  geom_point(aes(color = urban_rural), size = 3) +
+  scale_x_continuous(labels = scales::percent) +
+  labs(x = "Probability of seeing bird", y = NULL, color = NULL)
+``` 
+</div>
+<button class="cb" onclick="myFunction(3JUMz2jSUp)">Explanation</button>
+<div id="3JUMz2jSUp" style="display: none">
 
 </div>
 </figure>
