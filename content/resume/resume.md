@@ -72,7 +72,7 @@ subtitle = ""
 
 ## Education
 
-* University College London - MS in Computational Finance, GPA 4.0/4.0 2020 - 2021
+* University College London - MS in Computational Finance, GPA 4.0/4.0, Dean's List 2020 - 2021
 * University - BS in Applied Mathematics, 2016 GPA 4.0/4.0 2018 - 2020
 * Xian Jiao Tong Liverpool University, 2016 GPA 3.6/4.0 2016 - 2018
 
