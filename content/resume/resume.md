@@ -47,6 +47,22 @@ subtitle = ""
  css_class = ""
 +++
 
+## Education
+
+* University of Warwick (2022-2026) - MPhil/PhD in Computer Science
+* University College London (2020-2021) - MS in Computational Finance, GPA 4.0/4.0, Dean's List
+* University of Liverpool (2018-2020) - BS in Applied Mathematics, GPA 4.0/4.0
+* Xian Jiao Tong Liverpool University (2016-2018) - BS in Applied Mathematics, GPA 3.6/4.0
+
+## Work Experience
+
+#### Data Scientist, Made in London Media LTD, London, UK
+12/2021 - 2022/04
+
+* Lead the project team in the completion of the company's regulatory software, focusing on the design of the database and algorithms.
+* Summarised and gave weekly reports on the data from the various departments of the company.
+* Prognosis of expectations for the company's short and long term strategies.
+
 #### Software Backend Internship Engineer, Beijing TRS IT Co., Jilin, China
 07/2019 — 12/2019
 
@@ -69,11 +85,5 @@ subtitle = ""
 * Collected information from customers and potential customers.
 * Communicated with customers frequently to make sure their requirements were being met.
 
-
-## Education
-
-* University College London - MS in Computational Finance, GPA 4.0/4.0, Dean's List 2020 - 2021
-* University - BS in Applied Mathematics, 2016 GPA 4.0/4.0 2018 - 2020
-* Xian Jiao Tong Liverpool University, 2016 GPA 3.6/4.0 2016 - 2018
 
 To download my resume, please click on [Download](https://drive.google.com/file/d/1Wd4uc4GyP6iAFuzegHgWIniTVUy0f25X/view?usp=sharing).
