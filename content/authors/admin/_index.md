@@ -1,7 +1,7 @@
 ---
 title: Yu Cao
 role: 
-bio: My research interests include Generative Adversarial Networks, Reinforcement Learning and Information Security.
+bio: I am passionate about leveraging large language models for multimodal learning, with a specific focus on unsupervised domain adaptation and domain generalization..
 
 interests:
   - Domain Generalisation
