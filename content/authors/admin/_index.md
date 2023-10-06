@@ -50,4 +50,4 @@ I am a first-year PhD student at Queen Mary University of London (QMUL) under th
 
 I am actively seeking Research Assistant opportunities to further my academic endeavors. Simultaneously, I'm passionate about the practical application of scientific research and am keen on transitioning to the industry to expand my expertise and perspective.
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "https://drive.google.com/file/d/1Wd4uc4GyP6iAFuzegHgWIniTVUy0f25X/view?usp=sharing" "newtab" >}}resumé{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "https://drive.google.com/file/d/1M0CeBaysdAPYEieEAcxrZK1T38c2dwqt/view?usp=share_link" "newtab" >}}resumé{{< /staticref >}}.
