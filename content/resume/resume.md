@@ -49,7 +49,8 @@ subtitle = ""
 
 ## Education
 
-* University of Warwick (2022-2026) - MPhil/PhD in Computer Science
+* Queen Mary, University of London (2023-2027) - PhD in Computer Science, Supervised by Shaogang Gong
+* University of Warwick (2022-2023) - MPhil in Computer Science
 * University College London (2020-2021) - MS in Computational Finance, GPA 4.0/4.0, Dean's List
 * University of Liverpool (2018-2020) - BS in Applied Mathematics, GPA 4.0/4.0
 * Xian Jiao Tong Liverpool University (2016-2018) - BS in Applied Mathematics, GPA 3.6/4.0
