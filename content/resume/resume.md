@@ -79,12 +79,4 @@ subtitle = ""
 * The report discussed 156 suppliers, 80 sales customers, more than 100,000 sales data and had a sales value of 530 million in three years.
 * At the AGM in March 2019, that sales analysis provided a clear and effective data basis for the company's operating decisions and was unanimously praised.
 
-#### Sales Intern ,Tesla-Automobile Sales Servicshop 4S
-07/2018 - 09/2018
-
-* Interacted with staff and received instruction from them.
-* Collected information from customers and potential customers.
-* Communicated with customers frequently to make sure their requirements were being met.
-
-
 To download my resume, please click on [Download](https://drive.google.com/file/d/1Wd4uc4GyP6iAFuzegHgWIniTVUy0f25X/view?usp=sharing).

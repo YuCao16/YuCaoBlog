@@ -4,9 +4,9 @@ role:
 bio: My research interests include Generative Adversarial Networks, Reinforcement Learning and Information Security.
 
 interests:
-  - Deep Learning
-  - Data mining & Feature engerring
-  - Reinforcement Learning
+  - Domain Generalisation
+  - Computer Vision Generative Model (Diffusion and GAN)
+  - Multimodal LLM
 
 social:
   - icon: envelope
@@ -29,6 +29,12 @@ organizations:
     url: 
 education:
   courses:
+    - course: PhD in Computer Science
+      institution: University of Warwick
+      year: Present
+    - course: MPhil in Computer Science
+      institution: University of Warwick
+      year: 2022
     - course: MSc in Computational Finance
       institution: University College London
       year: 2020
@@ -40,8 +46,8 @@ superuser: true
 highlight_name: true
 ---
 
-My name is Cao Yu and I have just completed my postgraduate degree in Computational Finance at UCL. The topic of my dissertation is deep learning on unbalanced datasets datasets. My interests are in data mining and deep learning, making intuitive and beautiful charts to visualise complex data.
+I am a first-year PhD student at Queen Mary University of London (QMUL) under the supervision of Professor Shaogang Gong. My research aim is to answer the question: In what ways can large language models be optimally utilized to facilitate multimodal learning in fine-grained unsupervised domain adaptation and domain generalization? Consequently, I am deeply interested in generative models, multimodal, and domain generalization.
 
-I am currently looking for a job as a data analyst within London, UK, and I am also applying for a PHD related to deep learning.
+I am actively seeking Research Assistant opportunities to further my academic endeavors. Simultaneously, I'm passionate about the practical application of scientific research and am keen on transitioning to the industry to expand my expertise and perspective.
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "https://drive.google.com/file/d/1Wd4uc4GyP6iAFuzegHgWIniTVUy0f25X/view?usp=sharing" "newtab" >}}resumé{{< /staticref >}}.
